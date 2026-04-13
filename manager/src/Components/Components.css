@@ -1,0 +1,38 @@
+/*  Hamburger Menu  */
+.hamburger-menu {
+    z-index: 999;
+    opacity: 1;
+}
+@media (max-width: 767px) {
+    .hamburger-menu.o0iVae {
+        position: fixed;
+        top:35px;
+        left:30px;
+    }
+}
+
+.hlJH0, .HBu6N, .cLAGQe {
+    -webkit-transition: -webkit-transform .45s cubic-bezier(.4,0,.2,1);
+    transition: -webkit-transform .45s cubic-bezier(.4,0,.2,1);
+    transition: transform .45s cubic-bezier(.4,0,.2,1);
+    transition: transform .45s cubic-bezier(.4,0,.2,1), -webkit-transform .45s cubic-bezier(.4,0,.2,1);
+}
+.o0iVae .hlJH0 {
+    -webkit-transform: rotate(45deg) translate(0, 5px);
+    transform: rotate(45deg) translate(0, 5px);
+}
+.o0iVae .HBu6N {
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+    opacity: 0;
+}
+.o0iVae .cLAGQe {
+    -webkit-transform: rotate(135deg) translate(0, -5px);
+    transform: rotate(135deg) translate(0, -5px);
+}
+/*   Header Bar   */
+.header-bar {
+    display: flex;
+    align-items: center;
+    padding: 6px 0;
+}

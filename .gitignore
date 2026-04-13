@@ -1,0 +1,4 @@
+# Ignore build folder
+Build_folder/
+manager/node_modules/
+client/node_modules/

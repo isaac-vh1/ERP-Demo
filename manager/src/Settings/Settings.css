@@ -1,0 +1,153 @@
+.settings-page {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.settings-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  padding: 24px;
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.24), transparent 30%),
+    linear-gradient(135deg, #133a2c 0%, #1f6b4f 55%, #82c88c 100%);
+  color: #f4fff3;
+  box-shadow: 0 18px 38px rgba(16, 54, 39, 0.18);
+}
+
+.settings-hero h2 {
+  margin: 0 0 4px;
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
+}
+
+.settings-hero p {
+  margin: 0;
+  color: rgba(244, 255, 243, 0.82);
+  font-size: 0.95rem;
+}
+
+.settings-kicker {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.84;
+}
+
+.settings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  gap: 16px;
+}
+
+.settings-panel {
+  background: #fff;
+  border-radius: 16px;
+  padding: 22px 24px;
+  box-shadow: 0 12px 28px rgba(16, 54, 39, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.settings-panel-header h3 {
+  margin: 0 0 4px;
+  font-size: 1.1rem;
+  color: #173223;
+}
+
+.settings-panel-header p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #6b7280;
+}
+
+.settings-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.settings-field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.settings-field input,
+.settings-field textarea {
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #111827;
+  background: #fff;
+  resize: vertical;
+}
+
+.settings-field textarea {
+  min-height: 120px;
+}
+
+.settings-hint {
+  font-size: 0.82rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.settings-btn {
+  padding: 9px 18px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.settings-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.settings-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.settings-btn-primary {
+  background: #1e6b4e;
+  color: #fff;
+}
+
+.settings-result {
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
+
+.settings-result-success {
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #6ee7b7;
+}
+
+.settings-result-error {
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+@media (max-width: 600px) {
+  .settings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .settings-hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

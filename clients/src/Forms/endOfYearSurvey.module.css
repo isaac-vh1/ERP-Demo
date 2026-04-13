@@ -1,0 +1,54 @@
+
+@media (min-width: 768px) {
+  .container-md {
+    max-width: 860px;
+  }
+}
+
+/* Star rating (accessible radio with styled labels) */
+.star-rating {
+  display: inline-flex;
+  gap: 0.25rem;
+}
+
+.star-rating .star {
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+  color: #cfd8dc; /* empty */
+  transition: color 120ms ease-in-out, transform 120ms ease-in-out;
+}
+
+.star-rating .star:hover,
+.star-rating .star:focus {
+  color: #90caf9;
+  transform: translateY(-1px);
+}
+
+/* Checked state: fill all stars up to the selected one */
+.star-rating input:checked ~ label.star {
+  color: #ffc107; /* filled star (Bootstrap warning color) */
+}
+
+/* Keyboard focus ring for accessibility */
+.star-rating input:focus + label.star {
+  outline: 2px solid #90caf9;
+  outline-offset: 2px;
+}
+
+/* Card/section styling */
+.bg-white.rounded.shadow-sm {
+  border: 1px solid #e6eaef;
+}
+
+/* Improve textarea readability */
+textarea.form-control {
+  min-height: 120px;
+}
+
+/* Buttons full-width on mobile; auto on larger screens */
+@media (min-width: 576px) {
+  .btn.w-100 {
+    width: auto !important;
+  }
+}

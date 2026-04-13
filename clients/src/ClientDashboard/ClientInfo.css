@@ -1,0 +1,138 @@
+.client-information-page {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.client-information-page h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.info-display p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.info-display button {
+  display: block;
+  margin: 20px auto;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.info-display button:hover {
+  background-color: #0056b3;
+}
+
+.client-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Left-aligns the form content */
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.checkbox-group {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  font-weight: normal;
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.client-information-page button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: auto;
+  align-self: flex-start;
+  margin: 10px;
+  transition: background-color 0.3s ease;
+}
+.client-information-page button:hover {
+  background-color: #0056b3;
+}
+
+.required {
+  color: red;
+}
+.client-information-page label {
+  text-align: left !important;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .client-information-page {
+    margin: 14px;
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .client-information-page h1 {
+    font-size: 1.3rem;
+  }
+
+  .client-information-page button {
+    width: 100%;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+
+  .info-display button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

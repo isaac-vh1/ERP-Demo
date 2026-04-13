@@ -1,0 +1,126 @@
+/* ========== Global Styles (Body / "Home") ========== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #7fc37e !important;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100vh;
+}
+
+/* ========== Sidebar & Collapsed Logic ========== */
+.sidebar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+  background-color: #333;
+  color: #fff;
+  position: fixed;
+  height: 100%;
+  padding-top: 4px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: width 0.3s;
+  overflow-x: hidden;
+  z-index: 10;
+}
+.sidebar.collapsed {
+  width: 0%;
+}
+.sidebar-close {
+  display: none;
+  position: absolute;
+  left: 25px;
+  top: 25px;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 1;
+  z-index: 999;
+  color: white;
+  background: none;
+  border: none;
+  font-weight: bold;
+}
+
+.sidebar-header {
+  display: flex;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 0;
+  transition: opacity 0.3s;
+}
+
+.nav-link {
+  width: 85%;
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  margin: 10px 0px;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+.nav-link-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  width: 100%;
+}
+
+.nav-link-content-inline {
+  justify-content: center;
+}
+
+.nav-icon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+}
+
+.nav-link:hover {
+  background-color: #575757;
+  transform: scale(1.05);
+}
+
+/* ========== Main Content ========== */
+.main-content {
+  margin-left: 20%;
+  padding: 10px;
+  transition: margin-left 0.3s;
+  overflow-y: auto;
+  flex: 1;
+}
+.main-content.collapsed {
+  margin-left: 0px;
+}
+
+@media (max-width: 767px) {
+  .sidebar {
+    width: 100%;
+    z-index: 10;
+  }
+
+  .sidebar-close {
+    display: block;
+  }
+
+  .main-content.collapsed {
+    display: block;
+    margin-left: 0%;
+  }
+  .main-content {
+    margin-left: 0%;
+    width: 100%;
+  }
+}

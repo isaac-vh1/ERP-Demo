@@ -1,0 +1,213 @@
+.worker-pay-page {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.worker-pay-hero,
+.worker-pay-panel {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 24px 28px;
+  box-shadow: 0 20px 45px rgba(23, 44, 54, 0.08);
+}
+
+.worker-pay-hero {
+  background: linear-gradient(135deg, #1c3b33 0%, #2d6a4f 100%);
+  color: #f2faf5;
+}
+
+.worker-pay-kicker {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.78;
+}
+
+.worker-pay-hero h2,
+.worker-pay-panel h3 {
+  margin: 0 0 8px;
+}
+
+.worker-pay-hero p {
+  margin: 0;
+  max-width: 680px;
+  color: rgba(242, 250, 245, 0.88);
+}
+
+.worker-pay-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.worker-pay-panel-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: baseline;
+  margin-bottom: 18px;
+}
+
+.worker-pay-panel-header span {
+  color: #5f6f78;
+  font-size: 0.92rem;
+}
+
+.worker-pay-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 18px;
+}
+
+.worker-pay-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.worker-pay-field span {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #5b6f68;
+}
+
+.worker-pay-field input,
+.worker-pay-field select,
+.worker-pay-field textarea {
+  width: 100%;
+  border: 1px solid #d4e1da;
+  border-radius: 16px;
+  padding: 13px 14px;
+  background: #fcfefd;
+}
+
+.worker-pay-field textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.worker-pay-field input:focus,
+.worker-pay-field select:focus,
+.worker-pay-field textarea:focus {
+  outline: none;
+  border-color: #2d6a4f;
+  box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.12);
+}
+
+.worker-pay-field-wide,
+.worker-pay-actions {
+  grid-column: 1 / -1;
+}
+
+.worker-pay-primary {
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 18px;
+  background: #2d6a4f;
+  color: #f6fff8;
+  font-weight: 600;
+}
+
+.worker-pay-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.worker-pay-state,
+.worker-pay-note {
+  padding: 18px 20px;
+  border-radius: 18px;
+  background: #f4faf6;
+  color: #425c52;
+}
+
+.worker-pay-error {
+  background: #fff0f0;
+  color: #8f2d2d;
+}
+
+.worker-pay-success {
+  background: #edf8f1;
+  color: #216446;
+}
+
+.worker-pay-roster {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.worker-pay-roster-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: #f6faf8;
+}
+
+.worker-pay-roster-row strong,
+.worker-pay-roster-metrics strong {
+  display: block;
+}
+
+.worker-pay-roster-row span {
+  color: #5f6f78;
+  font-size: 0.92rem;
+}
+
+.worker-pay-roster-metrics {
+  text-align: right;
+}
+
+.worker-pay-table-wrap {
+  overflow-x: auto;
+}
+
+.worker-pay-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.worker-pay-table th,
+.worker-pay-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #e7efeb;
+  text-align: left;
+  vertical-align: top;
+}
+
+.worker-pay-table th {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #5f6f78;
+}
+
+@media (max-width: 960px) {
+  .worker-pay-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .worker-pay-page {
+    padding: 16px;
+  }
+
+  .worker-pay-hero,
+  .worker-pay-panel {
+    padding: 20px;
+  }
+
+  .worker-pay-form {
+    grid-template-columns: 1fr;
+  }
+}

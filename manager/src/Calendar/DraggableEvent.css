@@ -1,0 +1,27 @@
+/* src/components/DraggableEvent.css */
+
+.draggable-event {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    color:black;
+    cursor: grab;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+    position: relative;
+    transition: background-color 0.2s, opacity 0.2s, border 0.2s;
+    margin: 10px;
+  }
+  .draggable-event.dragging {
+    background-color: #f0f0f0; /* Light gray background during drag */
+    opacity: 0.7; /* Slight transparency */
+    border: 2px dashed #007bff; /* Dashed border to indicate dragging */
+  }
+  .draggable-event:active {
+    cursor: grabbing;
+  }
+  .draggable-event:focus {
+    outline: 2px solid #007bff;
+  }
