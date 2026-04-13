@@ -1,21 +1,16 @@
-name: Deploy Manager to GitHub Pages
+name: Deploy Demo to GitHub Pages
 
 on:
   push:
     branches: [main]
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
+  contents: write
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -25,30 +20,42 @@ jobs:
         with:
           node-version: 20
           cache: npm
-          cache-dependency-path: manager/package-lock.json
+          cache-dependency-path: |
+            manager/package-lock.json
+            clients/package-lock.json
 
-      - name: Install dependencies
+      - name: Install manager dependencies
         working-directory: manager
         run: npm ci
 
-      - name: Build
+      - name: Build manager
         working-directory: manager
         env:
           CI: false
+          PUBLIC_URL: /${{ github.event.repository.name }}/manager
         run: npm run build
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: manager/build
+      - name: Install clients dependencies
+        working-directory: clients
+        run: npm ci
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Build clients
+        working-directory: clients
+        env:
+          CI: false
+          PUBLIC_URL: /${{ github.event.repository.name }}/clients
+        run: npm run build
+
+      - name: Assemble deploy directory
+        run: |
+          mkdir -p dist/manager dist/clients
+          cp -r manager/build/. dist/manager/
+          cp -r clients/build/. dist/clients/
+          cp landing/index.html dist/index.html
+
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages

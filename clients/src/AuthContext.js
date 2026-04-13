@@ -1,6 +1,5 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { auth } from './firebase';
+import { createContext, useContext, useState, useEffect } from 'react';
+import { onAuthStateChanged, auth } from './firebase';
 
 const AuthContext = createContext(null);
 
@@ -12,16 +11,12 @@ export function AuthProvider({ children }) {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(false);
-      console.log("AuthContext using");
     });
     return () => unsubscribe();
   }, []);
 
-  // user is the currently logged in user or null
-  // loading indicates we haven't checked yet
-  const value = { user, loading };
   return (
-    <AuthContext.Provider value={value}>
+    <AuthContext.Provider value={{ user, loading }}>
       {children}
     </AuthContext.Provider>
   );

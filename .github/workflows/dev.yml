@@ -12,6 +12,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -21,14 +22,28 @@ jobs:
         with:
           node-version: 20
           cache: npm
-          cache-dependency-path: manager/package-lock.json
+          cache-dependency-path: |
+            manager/package-lock.json
+            clients/package-lock.json
 
-      - name: Install dependencies
+      - name: Install manager dependencies
         working-directory: manager
         run: npm ci
 
-      - name: Build
+      - name: Build manager
         working-directory: manager
         env:
           CI: false
+          PUBLIC_URL: /manager
+        run: npm run build
+
+      - name: Install clients dependencies
+        working-directory: clients
+        run: npm ci
+
+      - name: Build clients
+        working-directory: clients
+        env:
+          CI: false
+          PUBLIC_URL: /clients
         run: npm run build

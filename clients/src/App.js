@@ -1,8 +1,7 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
 import { Routes, Route, Navigate, NavLink } from "react-router-dom";
-import { signOut } from 'firebase/auth';
-import { auth } from './firebase';
+import { signOut, auth } from './firebase';
 import { AuthProvider, useAuth } from "./AuthContext.js";
 import InvoicePage from "./InvoicePage/InvoicePage.js";
 import Login from './Login/Login.js';
@@ -127,8 +126,6 @@ function AuthLayout({ children, showClientNav = false }) {
 }
 
 export default function App() {
-  const [savedPage, setSavedPage] = useState("");
-
   return (
     <div className="App">
       <Routes>
@@ -163,7 +160,7 @@ export default function App() {
           path="/verify"
           element={
             <AuthLayout>
-              <ProtectedRoute setSavedPage={setSavedPage}>
+              <ProtectedRoute >
                 <VerifyEmail />
               </ProtectedRoute>
             </AuthLayout>
@@ -173,7 +170,7 @@ export default function App() {
           path="/invoice"
           element={
             <AuthLayout showClientNav>
-              <ProtectedRoute setSavedPage={setSavedPage}>
+              <ProtectedRoute >
                 <InvoicePage />
               </ProtectedRoute>
             </AuthLayout>
@@ -183,7 +180,7 @@ export default function App() {
           path="/"
           element={
             <AuthLayout showClientNav>
-              <ProtectedRoute setSavedPage={setSavedPage}>
+              <ProtectedRoute >
                 <ClientDashboard section="overview" />
               </ProtectedRoute>
             </AuthLayout>
@@ -193,7 +190,7 @@ export default function App() {
           path="/client-requests"
           element={
             <AuthLayout showClientNav>
-              <ProtectedRoute setSavedPage={setSavedPage}>
+              <ProtectedRoute >
                 <ClientDashboard section="requests" />
               </ProtectedRoute>
             </AuthLayout>
@@ -203,7 +200,7 @@ export default function App() {
           path="/client-schedule"
           element={
             <AuthLayout showClientNav>
-              <ProtectedRoute setSavedPage={setSavedPage}>
+              <ProtectedRoute >
                 <ClientDashboard section="schedule" />
               </ProtectedRoute>
             </AuthLayout>
@@ -213,7 +210,7 @@ export default function App() {
           path="/client-invoices"
           element={
             <AuthLayout showClientNav>
-              <ProtectedRoute setSavedPage={setSavedPage}>
+              <ProtectedRoute >
                 <ClientDashboard section="invoices" />
               </ProtectedRoute>
             </AuthLayout>
@@ -223,7 +220,7 @@ export default function App() {
           path="/client-info"
           element={
             <AuthLayout>
-              <ProtectedRoute setSavedPage={setSavedPage}>
+              <ProtectedRoute >
                 <ClientInfo />
               </ProtectedRoute>
             </AuthLayout>
