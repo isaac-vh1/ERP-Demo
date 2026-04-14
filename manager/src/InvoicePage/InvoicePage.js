@@ -138,7 +138,7 @@ const InvoicePage = ({ toggleSidebar, collapsed }) => {
         <section className="invoice-header">
           <div className="invoice-brand">
             <div className="invoice-logo-wrap">
-              <img src="/favicon.ico" className="invoice-logo" alt="Demo Company logo" />
+              <img src="/Demo_logo.png" className="invoice-logo" alt="Demo logo" />
             </div>
             <div className="invoice-company">
               <h2>Demo Company</h2>

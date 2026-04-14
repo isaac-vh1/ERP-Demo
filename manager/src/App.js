@@ -136,6 +136,16 @@ function App() {
             ))}
           </Dropdown.Menu>
         </Dropdown>
+        <a
+          href="../"
+          className="nav-link"
+          style={{ marginTop: 'auto', opacity: 0.6 }}
+        >
+          <span className="nav-link-content">
+            <NavIcon path="M15 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1h-4M10 17l5-5-5-5M13 12H3" />
+            <span>Exit Demo</span>
+          </span>
+        </a>
       </nav>
       <AuthProvider>
         <main className={`main-content ${collapsed ? 'collapsed' : ''}`}>

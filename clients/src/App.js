@@ -12,7 +12,7 @@ import ClientDashboard from './ClientDashboard/ClientDashboard.js';
 import ClientInfo from './ClientDashboard/ClientInfo.js';
 import EndOfYearSurvey from './Forms/endOfYearSurvey.js';
 import { navItems } from './ClientDashboard/clientDashboardShared';
-const abiLogo = '/Demo_logo.png';
+const demoLogo = '/Demo_logo.png';
 
 function extractClientName(user) {
   if (user?.displayName?.trim()) {
@@ -62,7 +62,7 @@ function ClientNav() {
     <nav className={`app-client-nav${menuOpen ? ' menu-open' : ''}`} aria-label="Client portal sections">
       <div className="app-client-nav-inner">
         <div className="app-client-nav-brand">
-          <img src={abiLogo} alt="ABI logo" className="app-client-nav-logo" />
+          <img src={demoLogo} alt="Demo logo" className="app-client-nav-logo" />
           <p className="app-client-nav-greeting">{greeting}</p>
         </div>
         <button
@@ -87,7 +87,7 @@ function ClientNav() {
           ))}
           <button
             className="app-client-nav-link"
-            onClick={() => { setMenuOpen(false); signOut(auth); }}
+            onClick={() => { setMenuOpen(false); signOut(auth); window.location.href = '../'; }}
             style={{ cursor: 'pointer', fontWeight: 700 }}
           >
             Log Out
@@ -103,10 +103,6 @@ function PublicLayout({ children }) {
     <>
       <nav className="App-header" />
       <main>{children}</main>
-      <footer>
-        <a href="https://www.acresbyisaac.com/privacy-policy">Privacy Policy</a> |{" "}
-        <a href="https://www.acresbyisaac.com/terms-and-conditions">Terms and Conditions</a>
-      </footer>
     </>
   );
 }
@@ -117,10 +113,6 @@ function AuthLayout({ children, showClientNav = false }) {
       <header className="App-header" />
       {showClientNav ? <ClientNav /> : null}
       <main>{children}</main>
-      <footer>
-        <a href="https://www.acresbyisaac.com/privacy-policy">Privacy Policy</a> |{" "}
-        <a href="https://www.acresbyisaac.com/terms-and-conditions">Terms and Conditions</a>
-      </footer>
     </AuthProvider>
   );
 }

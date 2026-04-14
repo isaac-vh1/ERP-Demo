@@ -129,13 +129,13 @@ const InvoicePage = () => {
         <section className="invoice-header">
           <div className="invoice-brand">
             <div className="invoice-logo-wrap">
-              <img src="/Demo_logo.png" className="invoice-logo" alt="Acres by Isaac logo" />
+              <img src="/Demo_logo.png" className="invoice-logo" alt="Demo logo" />
             </div>
             <div className="invoice-company">
-              <h2>Acres By Isaac</h2>
-              <p>156 NE 193rd St.</p>
-              <p>Shoreline, WA 98155</p>
-              <p>(206) 595-5831</p>
+              <h2>Demo Company</h2>
+              <p>123 Demo St.</p>
+              <p>Anytown, WA 00000</p>
+              <p>(555) 000-0000</p>
             </div>
           </div>
 

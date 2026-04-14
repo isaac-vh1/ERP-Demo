@@ -7,7 +7,7 @@ export default function Settings({ toggleSidebar, collapsed }) {
   const { user } = useAuth();
 
   const [subject, setSubject] = useState('');
-  const [body, setBody] = useState('Dear {name},\n\n\n\nThank you,\nThe ABI Team');
+  const [body, setBody] = useState('Dear {name},\n\n\n\nThank you,\nThe Demo Team');
   const [sending, setSending] = useState(false);
   const [result, setResult] = useState(null);
 
