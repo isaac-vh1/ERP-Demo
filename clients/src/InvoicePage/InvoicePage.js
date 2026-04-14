@@ -129,7 +129,7 @@ const InvoicePage = () => {
         <section className="invoice-header">
           <div className="invoice-brand">
             <div className="invoice-logo-wrap">
-              <img src="/Demo_logo.png" className="invoice-logo" alt="Demo logo" />
+              <img src={`${process.env.PUBLIC_URL}/Demo_logo.png`} className="invoice-logo" alt="Demo logo" />
             </div>
             <div className="invoice-company">
               <h2>Demo Company</h2>

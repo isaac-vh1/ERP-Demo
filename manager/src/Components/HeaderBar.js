@@ -7,7 +7,7 @@ export default function HeaderBar({ page, toggleSidebar, collapsed }) {
   return (
     <div className="header-bar">
       <Helmet>
-        <title>{page}</title>
+        <title>ERP Demo | {page}</title>
       </Helmet>
       <div className="menu-toggle" onClick={toggleSidebar}>
         <HamburgerMenu collapsed={collapsed} />

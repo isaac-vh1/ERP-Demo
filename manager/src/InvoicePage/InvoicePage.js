@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './InvoicePage.css';
 import { useLocation } from 'react-router-dom';
 import { auth } from '../firebase';
@@ -138,7 +138,7 @@ const InvoicePage = ({ toggleSidebar, collapsed }) => {
         <section className="invoice-header">
           <div className="invoice-brand">
             <div className="invoice-logo-wrap">
-              <img src="/Demo_logo.png" className="invoice-logo" alt="Demo logo" />
+              <img src={`${process.env.PUBLIC_URL}/Demo_logo.png`} className="invoice-logo" alt="Demo logo" />
             </div>
             <div className="invoice-company">
               <h2>Demo Company</h2>
@@ -240,7 +240,7 @@ const InvoicePage = ({ toggleSidebar, collapsed }) => {
                 </tr>
               </thead>
               <tbody>
-                {items.map((item, index, slicedArray) => {
+                {items.map((_item, index, slicedArray) => {
                   if (index % 2 !== 0) return null;
                   const description = slicedArray[index];
                   const price = slicedArray[index + 1];

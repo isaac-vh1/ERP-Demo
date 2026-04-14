@@ -164,7 +164,7 @@ function Table({ page, toggleSidebar, collapsed }) {
   return (
     <div className="table-container">
       <Helmet>
-        <title>{capitalize(page)}</title>
+        <title>ERP Demo | {capitalize(page)}</title>
       </Helmet>
          <div className="table-page-header">
            <div className="menu-toggle" onClick={toggleSidebar}>

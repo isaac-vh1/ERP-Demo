@@ -12,7 +12,7 @@ import ClientDashboard from './ClientDashboard/ClientDashboard.js';
 import ClientInfo from './ClientDashboard/ClientInfo.js';
 import EndOfYearSurvey from './Forms/endOfYearSurvey.js';
 import { navItems } from './ClientDashboard/clientDashboardShared';
-const demoLogo = '/Demo_logo.png';
+const demoLogo = `${process.env.PUBLIC_URL}/Demo_logo.png`;
 
 function extractClientName(user) {
   if (user?.displayName?.trim()) {

@@ -386,7 +386,7 @@ export default function CalendarContainer({ toggleSidebar, collapsed }) {
   return (
     <div className="calendar-page">
       <Helmet>
-        <title>Calendar</title>
+        <title>ERP Demo | Calendar</title>
       </Helmet>
       <div className="calendar-layout">
         <aside className="calendar-drop-bar">

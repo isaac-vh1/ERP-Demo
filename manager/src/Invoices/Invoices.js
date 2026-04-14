@@ -220,7 +220,7 @@ const InvoicesPage = ({ toggleSidebar, collapsed }) => {
   return (
     <div className="container py-4">
       <Helmet>
-        <title>{capitalize(page)}</title>
+        <title>ERP Demo | {capitalize(page)}</title>
       </Helmet>
       <header className="d-flex justify-content-between align-items-center mb-3">
         <div className="menu-toggle" onClick={toggleSidebar}>

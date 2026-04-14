@@ -266,7 +266,7 @@ const InvoiceNew = ({ collapsed, toggleSidebar }) => {
 
   return (
     <div className="invoice-scope">
-      <Helmet><title>New Invoice</title></Helmet>
+      <Helmet><title>ERP Demo | New Invoice</title></Helmet>
       <div className="top-bar">
         <div className={`top-bar-button ${collapsed ? 'collapsed' : ''}`} onClick={toggleSidebar}><HamburgerMenu collapsed={collapsed} /></div>
       </div>
