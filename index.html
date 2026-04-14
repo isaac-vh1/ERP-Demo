@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0f1117;
+      color: #f0f0f0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .kicker {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #6b7280;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 700;
+      line-height: 1.15;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: #9ca3af;
+      text-align: center;
+      max-width: 480px;
+      line-height: 1.6;
+      margin-bottom: 3rem;
+    }
+
+    .cards {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .card {
+      background: #1a1d27;
+      border: 1px solid #2a2d3a;
+      border-radius: 16px;
+      padding: 2rem 2.5rem;
+      width: 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      border-color: #4f6ef7;
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(79, 110, 247, 0.15);
+    }
+
+    .card-icon {
+      font-size: 2rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .card-desc {
+      font-size: 0.9rem;
+      color: #9ca3af;
+      line-height: 1.5;
+    }
+
+    .card-cta {
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #4f6ef7;
+    }
+
+    .note {
+      margin-top: 3rem;
+      font-size: 0.8rem;
+      color: #4b5563;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <p class="kicker">Interactive Demo</p>
+  <h1>Choose a perspective</h1>
+  <p class="subtitle">Explore two sides of the platform. All data is pre-seeded and resets on reload — nothing is saved.</p>
+
+  <div class="cards">
+    <a class="card" href="./manager/">
+      <div class="card-icon">🗂️</div>
+      <div class="card-title">Manager Dashboard</div>
+      <div class="card-desc">Invoices, scheduling, clients, job board, receipts, and financials — the full back-office view.</div>
+      <div class="card-cta">Open Manager →</div>
+    </a>
+
+    <a class="card" href="./clients/">
+      <div class="card-icon">👤</div>
+      <div class="card-title">Client Portal</div>
+      <div class="card-desc">The client-facing app for viewing invoices, upcoming jobs, and submitting service requests.</div>
+      <div class="card-cta">Open Client Portal →</div>
+    </a>
+  </div>
+
+  <p class="note">No login required &nbsp;·&nbsp; Data resets on reload &nbsp;·&nbsp; Read-only safe</p>
+</body>
+</html>
