@@ -3,12 +3,12 @@
   "name": "Create React App Sample",
   "icons": [
     {
-      "src": "ABI_NO_bg.png",
+      "src": "Demo_logo.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "ABI_NO_bg.png",
+      "src": "Demo_logo.png",
       "type": "image/png",
       "sizes": "512x512"
     }
